@@ -4,7 +4,7 @@
 package main
 
 import (
-	"gweb/controllers"
+	"dilu/controllers"
 	"github.com/astaxie/beego"
 )
 
@@ -19,7 +19,7 @@ func init() {
 func main() {
 	beego.Router("/", &controllers.MainController{})
 	beego.AutoRouter(&controllers.UserController{})
-	beego.Router("/user", &controllers.UserController{})
-	beego.Router("/user/", &controllers.UserController{})
+	//beego.Router("/user", &controllers.UserController{})
+	//beego.Router("/user/", &controllers.UserController{})
 	beego.Run()
 }
