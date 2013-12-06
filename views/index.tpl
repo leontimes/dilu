@@ -2,7 +2,7 @@
 
 <html>
   	<head>
-    	<title>Beego</title>
+    	<title>Dilu</title>
     	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	
 		<style type="text/css">
@@ -31,7 +31,7 @@
 		     Passowrd:<input type="password" name="password"/><br/>
 		     <input type='submit' value='NEW save' />
 		</form>
-		<form method="post" action="/user/login">
+		<form method="post" action="/login">
 		     UserName:<input type="text" name="username" /><br/>
 		     Passowrd:<input type="password" name="password"/><br/>
 		     <input type='submit' value='Login' />

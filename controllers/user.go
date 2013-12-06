@@ -27,16 +27,17 @@ func (this *UserController) Login(){
 	pwd := tomd5.Sum(nil)
     u := User{}
   //  err := o.Read(&u,"username")
-	qs := o.QueryTable("user")
-	qs.Filter("username",username)
-	qs.Filter("password",password)
-	num,err := qs.Filter("username",username).Filter("password",password).All(&u)
+/*	qs := o.QueryTable("user")
+	num,err := qs.Filter("username",username).Filter("password",password).All(&u)   */
+	//var r RawSeter
+	err:= o.Raw("select * from user where username=? and password=?",username,password).QueryRow(&u)
+	//err2:= o.Raw("select * from user").QueryRow(&u)
     if err != nil{
     fmt.Printf("error %s",err)
-    }else if(num<=0){
+    }else if(u.Id<=0){
     fmt.Printf("not exist")
     }else{
-		fmt.Printf("exist %d %x",num,pwd)
+		fmt.Printf("exist %d %x",u.Id,pwd)
 	}
     fmt.Printf(u.Username);
     this.TplNames = "index.tpl"
